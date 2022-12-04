@@ -31,3 +31,14 @@ const getUsersWithGender = (users, gender) => users.reduce((userName, user) => {
 }, []);
 
 console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+
+
+//4. Получить массив только неактивных пользователей (поле isActive).
+
+// const getInactiveUsers = users => users.filter((user) => {
+//   return !user.isActive
+// });
+
+const getInactiveUsers = users => users.filter(user => !user.isActive);
+
+console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
