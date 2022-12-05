@@ -25,7 +25,7 @@ console.log(getUsersWithEyeColor(users, 'green'));
 const getUsersWithGender = (users, gender) => users.reduce((userName, user) => {  
   if (user.gender === gender) {
     userName.push(user.name);
-  }
+  };
 
   return userName;
 }, []);
@@ -69,3 +69,16 @@ const calculateTotalBalance = users => users.reduce((balance, user) => {
 }, 0);
 
 console.log(calculateTotalBalance(users)); // 20916
+
+
+//8. Массив имен всех пользователей у которых есть друг с указанным именем.
+
+const getUsersWithFriend = (users, friendName) => users.reduce((sortUsersName, user) => {  
+  if (user.friends.find(friend => friend === friendName)) {
+    sortUsersName.push(user.name);
+  };
+  return sortUsersName;
+}, []);
+
+console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
