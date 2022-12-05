@@ -82,3 +82,11 @@ const getUsersWithFriend = (users, friendName) => users.reduce((sortUsersName, u
 
 console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+
+
+// 9. Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
+
+const getNamesSortedByFriendsCount = users => users.sort((aUser, bUser) => aUser.friends.length - bUser.friends.length).flatMap(user => user.name);
+
+console.log(getNamesSortedByFriendsCount(users));
+// [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
